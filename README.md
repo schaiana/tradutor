@@ -2,7 +2,7 @@
 
 Esta aplicação transforma algarismos em números por extenso.
 
-Ela desenvolvida utilizando Python e Flask.
+Ela foi desenvolvida utilizando Python e Flask.
 
 
 **Dependências**:
