@@ -23,7 +23,7 @@ Ela foi desenvolvida utilizando Python e Flask.
 
 * *start*: reponsável por executar a aplicação de maneira desacoplada ao terminal (cria um processo à parte);
 
-* *stop*: responsável por parar o contêiner da aplicação;
+* *stop*: responsável por parar o contêiner da aplicação.
 
   
 **Para executar o servidor, utilize um dos seguintes comandos:**
