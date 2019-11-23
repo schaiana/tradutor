@@ -1,7 +1,5 @@
 FROM python:3.6.7
 
-COPY ./src/ /tradutor/
-COPY ./testes/ /tradutor/
 COPY ./requirements.test.txt /tradutor/
 
 WORKDIR /tradutor
@@ -9,5 +7,8 @@ WORKDIR /tradutor
 EXPOSE 3000
 
 RUN pip install -r requirements.test.txt
+
+COPY ./src/ /tradutor/
+COPY ./testes/ /tradutor/
 
 CMD ["pytest"]
