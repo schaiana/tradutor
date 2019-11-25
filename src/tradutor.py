@@ -30,7 +30,7 @@ algarismo_para_extenso = {
   70: "setenta",
   80: "oitenta",
   90: "noventa",
-  100: "cem",
+  100: "cento",
   200: "duzentos",
   300: "trezentos",
   400: "quatrocentos",
@@ -65,7 +65,11 @@ def obtem_extenso(algarismo):
                 extenso = sufixo.strip() + " e " + extenso
         else:
             if (sufixo != ""):
-                extenso = extenso_parcial + sufixo + "e " + extenso
+                extenso_parcial = extenso_parcial + sufixo
+                if extenso == "":
+                    extenso = extenso_parcial
+                else:
+                    extenso = extenso_parcial + "e " + extenso
             else:
                 extenso = extenso_parcial + sufixo + extenso
             
@@ -75,22 +79,36 @@ def obtem_extenso(algarismo):
 def traduz_cento(modulo_algarismo):
 
     unidade = modulo_algarismo % 10
+    #print(unidade)
     dezena = (modulo_algarismo % 100) - unidade
+    #print(dezena)
     cento = modulo_algarismo % 1000
+    #print(cento)
     centena = cento - dezena - unidade
+    #print(centena)
     extenso = ""
 
     if (centena != 0):
-        extenso += algarismo_para_extenso[centena]
+        if (cento == 100):
+            return cento, "cem"
+        else:
+            extenso += algarismo_para_extenso[centena]
+            print("centena: " + extenso)
     if (dezena != 0):
         if (centena != 0):
             extenso += " e "
-        extenso += algarismo_para_extenso[dezena]
+        if (dezena == 10):
+            extenso += algarismo_para_extenso[dezena + unidade]
+            return cento, extenso
+        else:
+            extenso += algarismo_para_extenso[dezena]
+            print("dezena: " + extenso)
     if (unidade != 0):
         if (dezena != 0 or centena != 0):
             extenso += " e "
+            print("unidade: " + extenso)
         extenso += algarismo_para_extenso[unidade]
-
+        print("unidade: " + extenso)
     return cento, extenso
 
 def valida_algarismo(algarismo):
@@ -100,4 +118,4 @@ def valida_algarismo(algarismo):
 
 
 if __name__ == '__main__':
-    print(obtem_extenso(-1042))
+    print(obtem_extenso(-119121))
