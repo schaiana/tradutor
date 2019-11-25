@@ -69,6 +69,22 @@ def test_traducao_cento_centena():
     assert tradutor.traduz_cento(233) == (233, "duzentos e trinta e três")
     assert tradutor.traduz_cento(203) == (203, "duzentos e três")
 
+def test_dezenas_menores_que_vinte():
+    assert tradutor.traduz_cento(11) == (11, "onze")
+    assert tradutor.traduz_cento(12) == (12, "doze")
+    assert tradutor.traduz_cento(13) == (13, "treze")
+    assert tradutor.traduz_cento(14) == (14, "quatorze")
+    assert tradutor.traduz_cento(15) == (15, "quinze")
+    assert tradutor.traduz_cento(16) == (16, "dezesseis")
+    assert tradutor.traduz_cento(17) == (17, "dezessete")
+    assert tradutor.traduz_cento(18) == (18, "dezoito")
+    assert tradutor.traduz_cento(19) == (19, "dezenove")
+
+def test_centena_menor_que_duzentos():
+    assert tradutor.traduz_cento(101) == (101, "cento e um")
+    assert tradutor.traduz_cento(111) == (111, "cento e onze")
+    assert tradutor.traduz_cento(121) == (121, "cento e vinte e um")
+
 
 ## Testes de validação
 
