@@ -93,7 +93,6 @@ def traduz_cento(modulo_algarismo):
             return cento, "cem"
         else:
             extenso += algarismo_para_extenso[centena]
-            print("centena: " + extenso)
     if (dezena != 0):
         if (centena != 0):
             extenso += " e "
@@ -102,13 +101,10 @@ def traduz_cento(modulo_algarismo):
             return cento, extenso
         else:
             extenso += algarismo_para_extenso[dezena]
-            print("dezena: " + extenso)
     if (unidade != 0):
         if (dezena != 0 or centena != 0):
             extenso += " e "
-            print("unidade: " + extenso)
         extenso += algarismo_para_extenso[unidade]
-        print("unidade: " + extenso)
     return cento, extenso
 
 def valida_algarismo(algarismo):
@@ -118,4 +114,4 @@ def valida_algarismo(algarismo):
 
 
 if __name__ == '__main__':
-    print(obtem_extenso(-119121))
+    print(obtem_extenso(119000))
