@@ -16,3 +16,9 @@ start: build
 stop:
 	docker stop app-tradutor
 
+clean:
+	- docker rmi image-test-app-tradutor
+	- docker rmi image-app-tradutor
+	- docker rm app-tradutor
+	- docker rm test-app-tradutor
+
