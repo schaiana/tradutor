@@ -17,11 +17,11 @@ Ela foi desenvolvida utilizando Python e Flask.
 
 * *build*: responsável por criar uma imagem da aplicação;
 
-* *run*: reponsável por executar a aplicação de maneira acoplada ao terminal;
+* *run*: responsável por executar a aplicação de maneira acoplada ao terminal;
 
 * *test*: responsável por executar os testes automatizados da aplicação;
 
-* *start*: reponsável por executar a aplicação de maneira desacoplada ao terminal (cria um processo à parte);
+* *start*: responsável por executar a aplicação de maneira desacoplada ao terminal (cria um processo à parte);
 
 * *stop*: responsável por parar o contêiner da aplicação.
 
